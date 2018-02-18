@@ -38,7 +38,7 @@ int main() {
     }
 
     imshow("image",img);
-    waitKey(0);
+    waitKey(33);
 
     return 0;
 }

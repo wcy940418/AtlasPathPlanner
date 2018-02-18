@@ -32,6 +32,9 @@ public:
   // use SPFA Algorithm as path planning
   vector<State> PathPlanning();
   // void ShowGraph(bool path = false);
+
+  // check if it is a empty position
+  bool IsValid(int x, int y);
 private:
   int row, col;
   // vector<State> paths;
@@ -42,9 +45,6 @@ private:
   // define four directions
   int dir[4][2] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
   string dirName[4] = {"North", "East", "South", "West"};
-
-  // check if it is a empty position
-  bool IsValid(int x, int y);
 };
 
 #endif
