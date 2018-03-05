@@ -13,13 +13,3 @@
 #include <cmath>
 
 #endif
-
-#ifndef _LIBCPP_ROBOT_CELL
-#define _LIBCPP_ROBOT_CELL
-
-#define EMPTY 0
-#define	STONE 1
-#define	START 2
-#define DEST 3
-
-#endif

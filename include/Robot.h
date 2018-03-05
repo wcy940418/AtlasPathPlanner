@@ -11,6 +11,7 @@ using namespace std;
 
 class Robot {
 public: 
+
 	Graph real, know;
 
 	Robot();
