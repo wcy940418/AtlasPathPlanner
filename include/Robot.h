@@ -11,10 +11,17 @@ using namespace std;
 
 class Robot {
 public: 
+	Cell start, dest;
 
 	Graph real, know;
 
 	Robot();
+
+	void SetGraph(const Graph& graph);
+
+	void SetStart(Cell start);
+
+	void SetDest(Cell dest);
 
 };
 
