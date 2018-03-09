@@ -1,36 +1,41 @@
-#include "Cell.h"
-#include "Util.h"
-#include <opencv2/opencv.hpp>
-
 #ifndef _LIBCPP_ROBOT_GRAPH
 #define _LIBCPP_ROBOT_GRAPH
 
-class Graph {
-private:
+#include "Cell.h"
+#include <opencv2/opencv.hpp>
+#include <vector>
 
-	std::vector<std::vector<int>> G;
+namespace robot {
 
-public:
+  class Graph {
 
-	int row, col;
+  private:
 
-	Graph();
+    std::vector<std::vector<int>> G;
 
-	Graph(cv::Mat img);
+  public:
 
-	Graph(int row, int col);
+    int row, col;
 
-	// initially all cells in graph is empty
-	void Init(int row, int col);
+    Graph();
 
-	void Set(int x, int y, int status);
+    Graph(cv::Mat img);
 
-	int Get(int x, int y) const;
+    Graph(int row, int col);
 
-	bool canGo(int x, int y) const;
+    /** initially all cells in graph is empty */
+    void Init(int row, int col);
 
-	cv::Mat show(std::vector<Cell> path) const;
-};
+    void Set(int x, int y, int status);
 
+    int Get(int x, int y) const;
+
+    bool canGo(int x, int y) const;
+
+    cv::Mat show(std::vector<Cell> path) const;
+
+  };
+
+}
 #endif
 

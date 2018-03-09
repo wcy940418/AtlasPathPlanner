@@ -1,27 +1,29 @@
-#include "Util.h"
-
 #ifndef _LIBCPP_ROBOT_CELL
 #define _LIBCPP_ROBOT_CELL
 
-#define ROB_EMPTY 0
-#define	ROB_STONE 1
-#define	ROB_START 2
-#define ROB_DEST 3
 
-/**
-Cell of Robot in the graph
-*/
-class Cell {
-public:
+namespace robot {
 
-	int x, y, dir;
+  #define ROB_EMPTY 0
+  #define	ROB_STONE 1
+  #define	ROB_START 2
+  #define ROB_DEST 3
 
-	Cell();
+  /** Cell of Robot in the graph */
+  class Cell {
 
-	Cell(int x, int y, int dir);
+  public:
 
-	bool operator < (const Cell& cell) const;
+    int x, y, dir;
 
-};
+    Cell();
+
+    Cell(int x, int y, int dir);
+
+    bool operator < (const Cell& cell) const;
+
+  };
+
+}
 
 #endif

@@ -1,26 +1,28 @@
-#include "Util.h"
-#include "Graph.h"
-#include "Cell.h"
-
-using namespace std;
-
 #ifndef _LIBCPP_ROBOT_PATH_PLANNER
 #define _LIBCPP_ROBOT_PATH_PLANNER
 
-class PathPlanner {
-private:
+#include "Graph.h"
+#include "Cell.h"
 
-  int stepWeight, directionWeight;
+namespace robot {
 
-public: 
+  class PathPlanner {
 
-	PathPlanner();
+  private:
 
-  void SetStepAndDirectionWeight(int stepWeight, int directionWeight);
+    int stepWeight, directionWeight;
 
-	// use SPFA Algorithm as path planning
-  vector<Cell> PathPlanning(const Graph& graph, const Cell start, const Cell dest);
+  public: 
 
-};
+    PathPlanner();
+
+    void SetStepAndDirectionWeight(int stepWeight, int directionWeight);
+
+    /** use SPFA Algorithm as path planning */
+    std::vector<Cell> PathPlanning(const Graph& graph, const Cell start, const Cell dest);
+
+  };
+
+}
 
 #endif

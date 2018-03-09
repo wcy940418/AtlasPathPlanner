@@ -1,28 +1,29 @@
 #ifndef _LIBCPP_ROBOT_ROBOT
 #define _LIBCPP_ROBOT_ROBOT
 
-#include "Util.h"
-
 #include "Graph.h"
 #include "PathPlanner.h"
-#include "Robot.h"
 
-using namespace std;
+namespace robot {
 
-class Robot {
-public: 
-	Cell start, dest;
+  class Robot {
 
-	Graph real, know;
+  public: 
 
-	Robot();
+    Cell start, dest;
 
-	void SetGraph(const Graph& graph);
+    Graph real, know;
 
-	void SetStart(Cell start);
+    Robot();
 
-	void SetDest(Cell dest);
+    void SetGraph(const Graph& graph);
 
-};
+    void SetStart(Cell start);
+
+    void SetDest(Cell dest);
+
+  };
+
+}
 
 #endif
