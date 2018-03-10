@@ -102,3 +102,4 @@ ENV/
 
 release/
 others/
+.vscode

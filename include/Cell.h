@@ -4,11 +4,6 @@
 
 namespace robot {
 
-  #define ROB_EMPTY 0
-  #define	ROB_STONE 1
-  #define	ROB_START 2
-  #define ROB_DEST 3
-
   /** Cell of Robot in the graph */
   class Cell {
 

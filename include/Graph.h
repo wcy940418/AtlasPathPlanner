@@ -7,6 +7,15 @@
 
 namespace robot {
 
+  /** grid status in the graph */
+  #define ROB_EMPTY 0
+  #define	ROB_STONE 1
+  #define	ROB_START 2
+  #define ROB_DEST 3
+
+  #define BLACK 0
+  #define WHITE 255
+
   class Graph {
 
   private:

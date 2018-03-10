@@ -18,7 +18,10 @@ namespace robot {
     for (int i = 0 ; i < row; i++) {
         for (int j = 0; j < col; j++) {
             int color = (int)img.at<uchar>(i, j);
-            if (color != 255) {
+            if (color != WHITE) {
+              // if (color != BLACK) {
+              //   std::cout << color << std::endl;
+              // }
               Set(i + 1, j + 1, ROB_STONE);
             } else {
               Set(i + 1, j + 1, ROB_EMPTY);
@@ -59,7 +62,7 @@ namespace robot {
     cv::Mat img(row, col, 0);
     for (int i = 1; i <= row; i++) {
       for (int j = 1; j <= col; j++) {
-        img.at<uchar>(i - 1, j - 1) = (G[i][j] == ROB_STONE ? 0 : 255);
+        img.at<uchar>(i - 1, j - 1) = (G[i][j] == ROB_STONE ? BLACK : WHITE);
       }
     }
     for (int i = 0; i < (int)path.size(); i++) {

@@ -2,8 +2,10 @@
 #include <queue>
 #include <map>
 #include <vector>
+#include <climits>
 
 namespace robot {
+  
   int dir[4][2] = {
     {1, 0}, 
     {0, 1}, 
@@ -28,8 +30,9 @@ namespace robot {
   }
 
   std::vector<Cell> PathPlanner::PathPlanning(const Graph& graph, const Cell start, const Cell dest) {
+    const int INF = 0x3f3f3f3f;
     int row = graph.row, col = graph.col;
-    std::vector<std::vector<std::vector<int> > > dis(4, std::vector<std::vector<int> >(row + 1, std::vector<int>(col + 1, INT_MAX)));
+    std::vector<std::vector<std::vector<int> > > dis(4, std::vector<std::vector<int> >(row + 1, std::vector<int>(col + 1, INF)));
     std::map<Cell, int> vis;
     std::map<Cell, Cell> pre;
     std::queue<Cell> que;
@@ -60,7 +63,7 @@ namespace robot {
             }
         }
     }
-    int res = INT_MAX;
+    int res = INF;
     Cell now;
     for (int i = 0; i < 4; i++) {
         if (res > dis[i][dest.x][dest.y]) {
@@ -70,7 +73,7 @@ namespace robot {
     }
     std::vector<Cell> path;
     int cnt = 0;
-    if (res == INT_MAX) {
+    if (res == INF) {
         std::cout << "can not find the path!" << std::endl;
     } else {
         std::cout << "find a path, cost is " << res << std::endl;
