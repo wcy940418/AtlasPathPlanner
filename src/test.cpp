@@ -17,7 +17,7 @@ int main() {
 		robot::Graph graph(img);
 		std::cout << graph.row << " " << graph.col << std::endl;
 		robot::Cell start(robot::Cell(30, 30, 1));
-		robot::Cell dest(robot::Cell(300, 400, 1));
+		robot::Cell dest(robot::Cell(200, 400, 1));
 
     robot::PathPlanner planner;
 		planner.SetStepAndDirectionWeight(1, 1);
